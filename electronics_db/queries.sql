@@ -1,13 +1,17 @@
 --Grundläggande queries
 
 --Hämta alla produkter sorterade efter namn
-SELECT * FROM products
+SELECT name,brand_id,sku,release_year,
+price, warranty_months,catagory,stock_quantity
+ FROM products
  ORDER BY name; 
  --Getting all the columns from products table 
  --and sorting by name
 
 --Hämta alla produkter som kostar mer än 500 kr
-select * from products
+select  name,brand_id,sku,release_year,
+price, warranty_months,catagory,stock_quantity
+ from products
  WHERE price > 500;
  --Getting all the columns from products table
  --where price is greater than 500
