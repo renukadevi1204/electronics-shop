@@ -78,9 +78,10 @@ where orders.total_amount =  (select max(total_amount) from orders);
 
 
 --Visa produkter med genomsnittligt betyg från recensioner
-select products.name from products JOIN
+select products.name,AVG(reviews.rating) 
+from products JOIN
 reviews on products.id = reviews.product_id
-where reviews.rating = (select round(avg(rating)) from reviews )
+group by products.id,products.name;
 --First i select the average rating from reviews TABLE
 --by using where condition retrived the product name 
 --by joining the two tables using product_id foreign key. 
